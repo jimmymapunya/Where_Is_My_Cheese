@@ -1,0 +1,43 @@
+# Built application files
+*.apk
+*.ap_
+
+# Java class files
+*.class
+
+# Generated files
+WhereIsMyCheese/bin/
+WhereIsMyCheese/gen/
+WhereIsMyCheese/out/
+
+# Gradle files
+WhereIsMyCheese/.gradle/
+WhereIsMyCheese/build/
+
+# Local configuration file (sdk path, etc)
+local.properties
+
+# Log Files
+*.log
+
+# Android Studio Navigation editor temp files
+WhereIsMyCheese/.navigation/
+
+# Android Studio captures folder
+WhereIsMyCheese/captures/
+
+# IntelliJ
+*.iml
+WhereIsMyCheese/.idea/workspace.xml
+WhereIsMyCheese/.idea/tasks.xml
+WhereIsMyCheese/.idea/gradle.xml
+WhereIsMyCheese/.idea/assetWizardSettings.xml
+WhereIsMyCheese/.idea/dictionaries
+WhereIsMyCheese/.idea/libraries
+WhereIsMyCheese/.idea/caches
+
+# External native build folder generated in Android Studio 2.2 and later
+.externalNativeBuild
+
+# Google Services (e.g. APIs or Firebase)
+google-services.json

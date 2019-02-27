@@ -8,10 +8,9 @@ import android.widget.Button;
 import android.widget.EditText;
 
 /**
- * We need some way to add a Cheezy Note. We also will require some way to show the user the cheezy note..
- * Feel free to just use AlertDialog if time is of the issue.
+ * We need some way to add a Cheezy Note. We will also require some way to show the user the cheezy note..
+ * Feel free to just use AlertDialog if time is an issue.
  */
-
 public class CheesyDialog extends Dialog implements View.OnClickListener {
 
     public Activity context;
@@ -39,7 +38,7 @@ public class CheesyDialog extends Dialog implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.saveCheeseButton:
                 listener.onNoteAdded(noteEditText.getText().toString());
                 dismiss();
@@ -52,8 +51,7 @@ public class CheesyDialog extends Dialog implements View.OnClickListener {
         }
     }
 
-    public interface INoteDialogListener
-    {
+    public interface INoteDialogListener {
         public void onNoteAdded(String note);
     }
 }

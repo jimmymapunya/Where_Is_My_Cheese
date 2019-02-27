@@ -6,12 +6,12 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.graphics.drawable.DrawableCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 
 import com.mapbox.mapboxsdk.Mapbox;
 import com.mapbox.mapboxsdk.annotations.Icon;
@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
     private MapboxMap map;
 
     @Override
-    public void onDestroy(){
+    public void onDestroy() {
         super.onDestroy();
     }
 
@@ -71,10 +71,9 @@ public class MainActivity extends AppCompatActivity {
         int permissionCheck = ContextCompat.checkSelfPermission(this,
                 Manifest.permission.ACCESS_FINE_LOCATION);
 
-        if(permissionCheck == PackageManager.PERMISSION_GRANTED){
+        if (permissionCheck == PackageManager.PERMISSION_GRANTED) {
             initializeMap();
-        }
-        else{
+        } else {
             ActivityCompat.requestPermissions(this,
                     new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
                     Constants.PERMISSIONS.ACCESS_FINE_LOCATION);
@@ -93,14 +92,14 @@ public class MainActivity extends AppCompatActivity {
                     initializeMap();
                 } else {
                     // permission denied, boo! Fine, no cheese for you!
-                    // No need to do anything here, for this exersize we only care about people who like cheese and have location setting on.
+                    // No need to do anything here, for this exercise we only care about people who like cheese and have location setting on.
                 }
                 return;
             }
         }
     }
 
-    private void initializeMap(){
+    private void initializeMap() {
         mapView.getMapAsync(new OnMapReadyCallback() {
             @Override
             public void onMapReady(MapboxMap mapboxMap) {
@@ -110,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void setupLongPressListener(){
+    private void setupLongPressListener() {
         map.setOnMapLongClickListener(new MapboxMap.OnMapLongClickListener() {
             @Override
             public void onMapLongClick(@NonNull LatLng point) {
@@ -119,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void createCheesyNote(final LatLng point){
+    private void createCheesyNote(final LatLng point) {
         CheesyDialog note = new CheesyDialog(this, new CheesyDialog.INoteDialogListener() {
             @Override
             public void onNoteAdded(String note) {
@@ -129,7 +128,7 @@ public class MainActivity extends AppCompatActivity {
         note.show();
     }
 
-    private void addCheeseToMap(LatLng point, String content){
+    private void addCheeseToMap(LatLng point, String content) {
         IconFactory iconFactory = IconFactory.getInstance(MainActivity.this);
         Icon icon = iconFactory.fromBitmap(getBitmapFromDrawableId(R.drawable.cheese64));
         MarkerOptions marker = new MarkerOptions();
@@ -141,9 +140,9 @@ public class MainActivity extends AppCompatActivity {
 
     private Bitmap getBitmapFromDrawableId(int drawableId) {
         Drawable vectorDrawable;
-        if (Build.VERSION.SDK_INT>= Build.VERSION_CODES.LOLLIPOP){
-            vectorDrawable = getResources().getDrawable(drawableId,null);
-        }else {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            vectorDrawable = getResources().getDrawable(drawableId, null);
+        } else {
             vectorDrawable = getResources().getDrawable(drawableId);
         }
 
@@ -152,8 +151,8 @@ public class MainActivity extends AppCompatActivity {
         int h = vectorDrawable.getIntrinsicHeight();
         int w = vectorDrawable.getIntrinsicWidth();
 
-        h=h>0?h:96;
-        w=w>0?w:96;
+        h = h > 0 ? h : 96;
+        w = w > 0 ? w : 96;
 
         wrapDrawable.setBounds(0, 0, w, h);
         Bitmap bm = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888);
@@ -161,5 +160,4 @@ public class MainActivity extends AppCompatActivity {
         wrapDrawable.draw(canvas);
         return bm;
     }
-
 }

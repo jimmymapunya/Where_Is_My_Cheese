@@ -36,21 +36,25 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onDestroy() {
         super.onDestroy();
+        mapView.onDestroy();
     }
 
     @Override
     public void onResume() {
         super.onResume();
+        mapView.onResume();
     }
 
     @Override
     public void onStart() {
         super.onStart();
+        mapView.onStart();
     }
 
     @Override
     public void onStop() {
         super.onStop();
+        mapView.onStop();
     }
 
     @Override
@@ -62,7 +66,9 @@ public class MainActivity extends AppCompatActivity {
         TODO: input your mapbox access token here, or use another map library (I am only trying to help you know..)
         LINK: https://www.mapbox.com/account/access-tokens/ -- It's free :)
         */
-        Mapbox.getInstance(this, "INPUT_YOUR_MAPBOX_TOKEN_HERE");
+
+        // Mapbox Access token
+        Mapbox.getInstance(this, getString(R.string.access_token));
 
         mapView = (MapView) findViewById(R.id.mapView);
         mapView.onCreate(savedInstanceState);

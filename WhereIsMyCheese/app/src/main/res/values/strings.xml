@@ -2,4 +2,8 @@
     <string name="app_name">WhereIsMyCheese</string>
     <string name="note_hint">Leave a cheesy note..</string>
     <string name="save_cheese">Save cheese</string>
+
+    //Access Token
+    <string name="access_token">sk.eyJ1IjoiamltbXktMTIzIiwiYSI6ImNrYnJuc3ZncTJ4dmgyeXB2cG92aWE1aDMifQ.lNP5xCCaHpJ-cLkBE9gO6Q</string>
+
 </resources>

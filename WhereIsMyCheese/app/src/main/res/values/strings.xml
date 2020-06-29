@@ -2,6 +2,10 @@
     <string name="app_name">WhereIsMyCheese</string>
     <string name="note_hint">Leave a cheesy note..</string>
     <string name="save_cheese">Save cheese</string>
+    <string name="pick_up_cheese">Pick Up Cheese</string>
+    <string name="cheese_discovered">Cheese Discovered!</string>
+    <string name="current_location">"Current Location"</string>
+    <string name="notification">"Searching Cheez.."</string>
 
     //Access Token
     <string name="access_token">sk.eyJ1IjoiamltbXktMTIzIiwiYSI6ImNrYnJuc3ZncTJ4dmgyeXB2cG92aWE1aDMifQ.lNP5xCCaHpJ-cLkBE9gO6Q</string>

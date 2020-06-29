@@ -5,6 +5,10 @@ package whereismytransport.whereismycheese;
  */
 public class Constants {
     public interface PERMISSIONS {
-        public static int ACCESS_FINE_LOCATION = 16158;
+        int ACCESS_FINE_LOCATION = 16158;
+        String CHANNEL_ID = "exampleServiceChannel";
+        int NOTIFICATION_ID = 1;
+        String SERVICE = "inputExtra";
+        String  SHARED_PREF_NAME= "USER";
     }
 }
